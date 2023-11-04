@@ -3,16 +3,19 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 
 interface NavProps {
-    to: string;
-    title: string;
-    children: React.ReactNode; // Add this line
-    key: number;
+  to: string
+  title: string
+  children: React.ReactNode // Add this line
+  key: number
 }
 
 const Left = () => {
-
   const navLinks = [
-    { title: 'React, Typescript, Redux, Sass', path: '/setting1', parent: 'Settings' },
+    {
+      title: 'React, Typescript, Redux, Sass',
+      path: '/setting1',
+      parent: 'Settings',
+    },
     { title: 'React-router', path: '/setting3', parent: 'Settings' },
     { title: 'Tailwind', path: '/setting2', parent: 'Settings' },
     { title: 'ESLint, Prettier', path: '/setting4', parent: 'Settings' },
@@ -29,7 +32,7 @@ const Left = () => {
   const Nav = ({ to, title }: NavProps) => {
     const resolved = useResolvedPath(to)
     const match = useMatch({ path: resolved.pathname, end: true })
-  
+
     return (
       <Link to={to} key={title} className={match ? 'active' : ''}>
         {title}
@@ -37,14 +40,15 @@ const Left = () => {
     )
   }
 
-  const NavTitle = ({ title }: { title: string }) => 
+  const NavTitle = ({ title }: { title: string }) => (
     <div>
       <hr className="opacity-10 my-4" />
       <div className="mb-2 px-6 opacity-30 text-sm">{title}</div>
     </div>
+  )
 
   return (
-    <div className='left bg-blue-950 text-sky-300'>
+    <div className="left bg-blue-950 text-sky-300">
       <div>
         <Link to={'/'}>
           <img src={logo} alt="logo" className="w-36 mx-auto" />
@@ -54,7 +58,7 @@ const Left = () => {
         <div className="nav">
           <NavTitle title="Settings" />
           {navLinks
-            .filter((link) => link.parent === 'Settings' )
+            .filter(link => link.parent === 'Settings')
             .map((link, index) => (
               <Nav to={link.path} title={link.title} key={index}>
                 {link.title}
@@ -63,7 +67,7 @@ const Left = () => {
 
           <NavTitle title="Hooks" />
           {navLinks
-            .filter((link) => link.parent === 'Hooks' )
+            .filter(link => link.parent === 'Hooks')
             .map((link, index) => (
               <Nav to={link.path} title={link.title} key={index}>
                 {link.title}
@@ -74,7 +78,7 @@ const Left = () => {
 
           <NavTitle title="Ect" />
           {navLinks
-            .filter((link) => link.parent === 'Ect' )
+            .filter(link => link.parent === 'Ect')
             .map((link, index) => (
               <Nav to={link.path} title={link.title} key={index}>
                 {link.title}
