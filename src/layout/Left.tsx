@@ -10,8 +10,9 @@ interface MyLinkProps {
 }
 
 const Left = () => {
-    const settingslinks = [
+    const settingsLinks = [
       { title: 'React, Typescript, Redux, Sass', path: '/setting1' },
+      { title: 'React-router', path: '/setting3' },
       { title: 'Tailwind', path: '/setting2' },
     ]
 
@@ -41,7 +42,7 @@ const Left = () => {
           <div className="nav">
             <div className="mb-2 px-6 opacity-30 text-sm">Settings</div>
 
-            {settingslinks.map((link, index) => (
+            {settingsLinks.map((link, index) => (
               <MyLink to={link.path} title={link.title} key={index}>
                 {link.title}
               </MyLink>

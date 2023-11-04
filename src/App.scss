@@ -43,10 +43,21 @@
 }
 
 .page-title {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   font-size: 24px;
   font-weight: 500;
   color: #333;
+}
+
+.text-link {
+  // light blue
+  color: rgb(23, 140, 233);
+  text-decoration: none;
+  transition: all .3s;
+  &:hover {
+    text-decoration: underline;
+  }
+
 }
 
 .todoList {
@@ -62,7 +73,7 @@
     font-size: .9rem;
     font-family: 'Roboto Mono', monospace;
     background-color: #eee;
-    padding: 8px;
+    padding: 8px 16px;
     border-radius: 4px;
     margin: 8px 0;
 }
