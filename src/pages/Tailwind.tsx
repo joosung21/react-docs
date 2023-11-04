@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Setting2 = () => {
+const Tailwind = () => {
   return (
     <div>
       <div className="page-title">Tailwind</div>
@@ -17,16 +17,11 @@ const Setting2 = () => {
       <br />
 
       <div className="mt-4">Tailwind 문서</div>
-      <a
-        href="https://tailwindcss.com/docs"
-        target="_blank"
-        rel="noreferrer"
-        className="text-link"
-      >
+      <a href="https://tailwindcss.com/docs" target="_blank" rel="noreferrer" className="text-link">
         Tailwind CSS Documentation
       </a>
     </div>
   )
 }
 
-export default Setting2
+export default Tailwind

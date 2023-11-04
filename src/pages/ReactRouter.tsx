@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Setting3 = () => {
+const ReactRouter = () => {
   return (
     <div>
       <div className="page-title">React-router</div>
@@ -17,4 +17,4 @@ const Setting3 = () => {
   )
 }
 
-export default Setting3
+export default ReactRouter

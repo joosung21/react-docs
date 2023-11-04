@@ -1,33 +1,32 @@
 import React from 'react'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
-import logo from '../assets/logo.svg'
+import { NavLink, NavProps } from './Left.d'
+import logo from 'assets/logo.svg'
 
-interface NavProps {
-  to: string
-  title: string
-  children: React.ReactNode // Add this line
-  key: number
-}
+const navLinks = [
+  { title: 'React, Typescript, Redux, Sass', path: '/create-react-app', parent: 'Settings' },
+  { title: 'React-router', path: '/react-router', parent: 'Settings' },
+  { title: 'ESLint, Prettier', path: '/lint-format', parent: 'Settings' },
+  { title: 'Versions', path: '/versions', parent: 'Settings' },
+  { title: 'Tailwind', path: '/tailwind', parent: 'UI Framworks' },
+  { title: 'Mui', path: '/mui', parent: 'UI Framworks' },
+  { title: 'useState', path: '/use-state', parent: 'Hooks' },
+  { title: 'useEffect', path: '/use-effect', parent: 'Hooks' },
+  { title: 'useCallback', path: '/use-callback', parent: 'Hooks' },
+  { title: 'useMemo', path: '/use-memo', parent: 'Hooks' },
+  { title: 'useRef', path: '/use-ref', parent: 'Hooks' },
+  { title: 'useContext', path: '/use-context', parent: 'Hooks' },
+  { title: 'useReducer', path: '/use-reducer', parent: 'Hooks' },
+  { title: 'Todo', path: '/todo', parent: 'Ect' },
+] as NavLink[]
 
 const Left = () => {
-  const navLinks = [
-    {
-      title: 'React, Typescript, Redux, Sass',
-      path: '/setting1',
-      parent: 'Settings',
-    },
-    { title: 'React-router', path: '/setting3', parent: 'Settings' },
-    { title: 'Tailwind', path: '/setting2', parent: 'Settings' },
-    { title: 'ESLint, Prettier', path: '/setting4', parent: 'Settings' },
-    { title: 'Todo', path: '/todo', parent: 'Ect' },
-    { title: 'useState', path: '/hook1', parent: 'Hooks' },
-    { title: 'useEffect', path: '/hook2', parent: 'Hooks' },
-    { title: 'useCallback', path: '/hook3', parent: 'Hooks' },
-    { title: 'useMemo', path: '/hook4', parent: 'Hooks' },
-    { title: 'useRef', path: '/hook5', parent: 'Hooks' },
-    { title: 'useContext', path: '/hook6', parent: 'Hooks' },
-    { title: 'useReducer', path: '/hook7', parent: 'Hooks' },
-  ]
+  const groups = navLinks.reduce((acc: string[], cur) => {
+    if (!acc.includes(cur.parent)) {
+      acc.push(cur.parent)
+    }
+    return acc
+  }, [])
 
   const Nav = ({ to, title }: NavProps) => {
     const resolved = useResolvedPath(to)
@@ -40,51 +39,37 @@ const Left = () => {
     )
   }
 
-  const NavTitle = ({ title }: { title: string }) => (
-    <div>
-      <hr className="opacity-10 my-4" />
-      <div className="mb-2 px-6 opacity-30 text-sm">{title}</div>
-    </div>
+  const NavGroup = ({ groupTitle }: { groupTitle: string }) => (
+    <>
+      <div>
+        <hr className="opacity-10 my-4" />
+        <div className="mb-2 px-6 opacity-30 text-sm">{groupTitle}</div>
+      </div>
+      {navLinks
+        .filter(link => link.parent === groupTitle)
+        .map((link, index) => (
+          <Nav to={link.path} title={link.title} key={index}>
+            {link.title}
+          </Nav>
+        ))}
+    </>
   )
 
   return (
     <div className="left bg-blue-950 text-sky-300">
-      <div>
-        <Link to={'/'}>
-          <img src={logo} alt="logo" className="rotate-logo w-36 mx-auto" />
-          <div className="mb-5 text-3xl text-center">Joosung&apos;s React</div>
-        </Link>
+      <Link to={'/'} className="left-header">
+        <img src={logo} alt="logo" className="rotate-logo w-36 mx-auto" />
+        <div className="mb-5 text-3xl text-center">Joosung&apos;s React</div>
+      </Link>
 
-        <div className="nav">
-          <NavTitle title="Settings" />
-          {navLinks
-            .filter(link => link.parent === 'Settings')
-            .map((link, index) => (
-              <Nav to={link.path} title={link.title} key={index}>
-                {link.title}
-              </Nav>
-            ))}
-
-          <NavTitle title="Hooks" />
-          {navLinks
-            .filter(link => link.parent === 'Hooks')
-            .map((link, index) => (
-              <Nav to={link.path} title={link.title} key={index}>
-                {link.title}
-              </Nav>
-            ))}
-
-          <NavTitle title="UI Framworks" />
-
-          <NavTitle title="Ect" />
-          {navLinks
-            .filter(link => link.parent === 'Ect')
-            .map((link, index) => (
-              <Nav to={link.path} title={link.title} key={index}>
-                {link.title}
-              </Nav>
-            ))}
-        </div>
+      <div className="nav">
+        {groups.map(group => (
+          <NavGroup groupTitle={group} key={group} />
+        ))}
+        {/* <NavGroup groupTitle="Settings" />
+        <NavGroup groupTitle="UI Framworks" />
+        <NavGroup groupTitle="Hooks" />
+        <NavGroup groupTitle="Ect" /> */}
       </div>
     </div>
   )

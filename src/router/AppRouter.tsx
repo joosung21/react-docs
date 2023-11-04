@@ -3,11 +3,13 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Left from '../layout/Left'
 import NotFound from '../pages/NotFound'
 import Todo from '../pages/Todo'
-import Setting1 from '../pages/Setting1'
-import Setting2 from '../pages/Setting2'
-import Setting3 from '../pages/Setting3'
-import Setting4 from '../pages/Setting4'
-import Hook1 from '../pages/Hook1'
+import MUI from '../pages/Mui'
+import CreateReactApp from 'pages/CreateReactApp'
+import LintFormat from 'pages/LintFormat'
+import ReactRouter from 'pages/ReactRouter'
+import Versions from 'pages/Versions'
+import Tailwind from 'pages/Tailwind'
+import UseState from 'pages/UseState'
 
 const AppRouter = () => {
   return (
@@ -17,11 +19,13 @@ const AppRouter = () => {
       <div className="main">
         <Routes>
           <Route path="/" element={<Navigate to="/setting1" />} />
-          <Route path="/setting1" element={<Setting1 />} />
-          <Route path="/setting2" element={<Setting2 />} />
-          <Route path="/setting3" element={<Setting3 />} />
-          <Route path="/setting4" element={<Setting4 />} />
-          <Route path="/hook1" element={<Hook1 />} />
+          <Route path="/create-react-app" element={<CreateReactApp />} />
+          <Route path="/lint-format" element={<LintFormat />} />
+          <Route path="/react-router" element={<ReactRouter />} />
+          <Route path="/versions" element={<Versions />} />
+          <Route path="/tailwind" element={<Tailwind />} />
+          <Route path="/mui" element={<MUI />} />
+          <Route path="/use-state" element={<UseState />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

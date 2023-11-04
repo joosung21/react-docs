@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Hook1 = () => {
+const UseState = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -16,4 +16,4 @@ const Hook1 = () => {
   )
 }
 
-export default Hook1
+export default UseState

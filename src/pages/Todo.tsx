@@ -5,8 +5,7 @@ const Todo = () => {
     <div className="todoList">
       <ul style={{ listStyle: 'square' }}>
         <li>MUI 적용</li>
-        <li>Router 분리</li>
-        <li>React-admin 적용해 보기</li>
+        <li>React-admin?</li>
 
         <li>리액트 공식문서 1독</li>
         <li>리액트 DevTool</li>
@@ -18,14 +17,7 @@ const Todo = () => {
         <li>적절한 리액트 스켈레톤</li>
         <li>Recoil</li>
         <li>클립보드 복사기능</li>
-        <li>
-          Settings
-          <ul>
-            <li>prettier</li>
-            <li>jest</li>
-            <li>Router https://goddaehee.tistory.com/305</li>
-          </ul>
-        </li>
+        <li>jest / vitest</li>
         <li>
           React Hooks
           <ul>

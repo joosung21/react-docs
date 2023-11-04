@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Setting4 = () => {
+const LintFormat = () => {
   return (
     <div className="limit-width">
       <div className="page-title">Eslint & Prettier</div>
@@ -15,8 +15,7 @@ const Setting4 = () => {
       </a>
 
       <div className="mt-8">
-        ESLint 이후 npm ERR! ERESOLVE unable to resolve dependency tree 가 날
-        경우
+        ESLint 이후 npm ERR! ERESOLVE unable to resolve dependency tree 가 날 경우
       </div>
       <div className="code">npm install --legacy-peer-deps</div>
 
@@ -55,4 +54,4 @@ const Setting4 = () => {
   )
 }
 
-export default Setting4
+export default LintFormat
