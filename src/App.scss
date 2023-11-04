@@ -12,16 +12,8 @@
   padding: 12px 0;
   user-select: none;
   overflow-y: auto;
-  .logo {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 500;
-    opacity: 0.85;
-    transition: all 0.3s;
-    cursor: pointer;
-    &:hover {
-      opacity: 1;
-    }
+  .rotate-logo {
+    animation: rotate 6s linear infinite;
   }
   .nav {
     a {
@@ -37,6 +29,16 @@
         color: #fff;
       }
     }
+  }
+}
+
+// keyframes
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 

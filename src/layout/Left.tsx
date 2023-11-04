@@ -51,7 +51,7 @@ const Left = () => {
     <div className="left bg-blue-950 text-sky-300">
       <div>
         <Link to={'/'}>
-          <img src={logo} alt="logo" className="w-36 mx-auto" />
+          <img src={logo} alt="logo" className="rotate-logo w-36 mx-auto" />
           <div className="mb-5 text-3xl text-center">Joosung&apos;s React</div>
         </Link>
 
