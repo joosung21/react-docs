@@ -4,12 +4,14 @@ const Todo = () => {
   return (
     <div className="todoList">
       <ul style={{ listStyle: 'square' }}>
+        <li>MUI 적용</li>
         <li>Prettier 설치</li>
         <li>Router 분리</li>
         <li>React-admin 적용해 보기</li>
-        <li>MUI 적용해 보기</li>
+        
         <li>리액트 공식문서 1독</li>
         <li>리액트 DevTool</li>
+        <li>라우팅 파라미터</li>
 
         <hr className="my-2" />
         

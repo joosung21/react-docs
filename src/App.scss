@@ -6,10 +6,12 @@
 }
 
 .left {
+  flex-shrink: 0;
   width: 300px;
-  min-height: 100vh;
+  height: 100vh;
   padding: 12px 0;
   user-select: none;
+  overflow-y: auto;
   .logo {
     display: block;
     font-size: 1.2rem;
@@ -40,6 +42,7 @@
 
 .main { 
   padding: 24px;
+  width: 100%;
 }
 
 .page-title {
