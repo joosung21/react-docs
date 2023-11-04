@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Todo = () => {
   return (
@@ -21,18 +21,18 @@ const Todo = () => {
         <li>클립보드 복사기능</li>
         <li>
             Settings
-            <ul>
+          <ul>
             <li>prettier</li>
             <li>jest</li>
             <li>
                 Router
                 https://goddaehee.tistory.com/305
             </li>
-            </ul>
+          </ul>
         </li>
         <li>
             React Hooks
-            <ul>
+          <ul>
             <li>https://codepen.io/topic/react/templates</li>
             <li>useState</li>
             <li>useEffect</li>
@@ -41,19 +41,19 @@ const Todo = () => {
             <li>useRef</li>
             <li>useContext</li>
             <li>useReducer</li>
-            </ul>
+          </ul>
         </li>
         <li>
             UI Component
-            <ul>
+          <ul>
             <li>Icon?</li>
-            </ul>
+          </ul>
         </li>
         {/* 공부할 것 */}
         {/* https://goddaehee.tistory.com/311 */}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default Todo;
+export default Todo

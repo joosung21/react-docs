@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const Hook1 = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <div>
@@ -11,7 +11,7 @@ const Hook1 = () => {
       <div className="mt-4">count: {count}</div>
       <button className="btn-blue" onClick={() => setCount(count + 1)}>+1</button>
     </div>
-  );
-};
+  )
+}
 
-export default Hook1;
+export default Hook1

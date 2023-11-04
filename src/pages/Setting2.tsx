@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Setting2 = () => {
   return (
@@ -16,7 +16,7 @@ const Setting2 = () => {
         Tailwind CSS Documentation
       </a>
     </div>
-  );
-};
+  )
+}
 
-export default Setting2;
+export default Setting2

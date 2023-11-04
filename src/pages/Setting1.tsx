@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
 const Setting1 = () => {
   return (
-    <div>
+    <div className="limit-width">
       <div className="page-title">React, Typescript, Redux, Sass</div>
       <div className="code">npx create-react-app my-app --template typescript</div>
       <div className="code">cd my-app</div>
@@ -14,7 +14,7 @@ const Setting1 = () => {
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Setting1;
+export default Setting1

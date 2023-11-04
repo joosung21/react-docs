@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Setting3 = () => {
   return (
@@ -9,7 +9,7 @@ const Setting3 = () => {
         https://goddaehee.tistory.com/305
       </a>
     </div>
-  );
-};
+  )
+}
 
-export default Setting3;
+export default Setting3

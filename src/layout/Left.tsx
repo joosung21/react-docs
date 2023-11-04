@@ -1,6 +1,6 @@
-import React from "react";
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
-import logo from '../assets/logo.svg';
+import React from 'react'
+import { Link, useMatch, useResolvedPath } from 'react-router-dom'
+import logo from '../assets/logo.svg'
 
 interface NavProps {
     to: string;
@@ -15,6 +15,7 @@ const Left = () => {
     { title: 'React, Typescript, Redux, Sass', path: '/setting1', parent: 'Settings' },
     { title: 'React-router', path: '/setting3', parent: 'Settings' },
     { title: 'Tailwind', path: '/setting2', parent: 'Settings' },
+    { title: 'ESLint, Prettier', path: '/setting4', parent: 'Settings' },
     { title: 'Todo', path: '/todo', parent: 'Ect' },
     { title: 'useState', path: '/hook1', parent: 'Hooks' },
     { title: 'useEffect', path: '/hook2', parent: 'Hooks' },
@@ -26,8 +27,8 @@ const Left = () => {
   ]
 
   const Nav = ({ to, title }: NavProps) => {
-    let resolved = useResolvedPath(to);
-    let match = useMatch({ path: resolved.pathname, end: true });
+    const resolved = useResolvedPath(to)
+    const match = useMatch({ path: resolved.pathname, end: true })
   
     return (
       <Link to={to} key={title} className={match ? 'active' : ''}>
@@ -47,7 +48,7 @@ const Left = () => {
       <div>
         <Link to={'/'}>
           <img src={logo} alt="logo" className="w-36 mx-auto" />
-          <div className="mb-5 text-3xl text-center">Joosung's React</div>
+          <div className="mb-5 text-3xl text-center">Joosung&apos;s React</div>
         </Link>
 
         <div className="nav">
@@ -58,7 +59,7 @@ const Left = () => {
               <Nav to={link.path} title={link.title} key={index}>
                 {link.title}
               </Nav>
-          ))}
+            ))}
 
           <NavTitle title="Hooks" />
           {navLinks
@@ -67,7 +68,7 @@ const Left = () => {
               <Nav to={link.path} title={link.title} key={index}>
                 {link.title}
               </Nav>
-          ))}
+            ))}
 
           <NavTitle title="UI Framworks" />
 
@@ -78,11 +79,11 @@ const Left = () => {
               <Nav to={link.path} title={link.title} key={index}>
                 {link.title}
               </Nav>
-          ))}
+            ))}
         </div>
       </div>
     </div>
   )
 }
 
-export default Left;
+export default Left
