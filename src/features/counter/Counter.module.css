@@ -43,6 +43,7 @@
   width: 64px;
   text-align: center;
   margin-right: 4px;
+  border: 2px solid rgba(112, 76, 182, 0.1);
 }
 
 .button:hover,
