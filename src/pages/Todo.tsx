@@ -4,7 +4,6 @@ const Todo = () => {
   return (
     <div className="todoList">
       <ul style={{ listStyle: 'square' }}>
-        <li>Axios 세팅</li>
         <li>라우팅 파라미터</li>
         <li>리액트 공식문서</li>
         <li>리액트 DevTool</li>

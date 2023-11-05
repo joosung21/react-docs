@@ -7,6 +7,7 @@ const navLinks = [
   { title: 'React, Typescript, Redux, Sass', path: '/create-react-app', parent: 'Settings' },
   { title: 'React-router', path: '/react-router', parent: 'Settings' },
   { title: 'ESLint, Prettier', path: '/lint-format', parent: 'Settings' },
+  { title: 'Axios', path: '/axios', parent: 'Settings' },
   { title: 'Versions', path: '/versions', parent: 'Settings' },
   { title: 'Tailwind', path: '/tailwind', parent: 'UI Framworks' },
   { title: 'Mui', path: '/mui', parent: 'UI Framworks' },
