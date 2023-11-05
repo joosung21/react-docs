@@ -8,6 +8,7 @@ import UiSandbox from '../pages/UiSandbox'
 import CreateReactApp from 'pages/CreateReactApp'
 import LintFormat from 'pages/LintFormat'
 import ReactRouter from 'pages/ReactRouter'
+import Jest from 'pages/Jest'
 import Versions from 'pages/Versions'
 import Axios from 'pages/Axios'
 import Redux from 'pages/Redux'
@@ -28,6 +29,7 @@ const AppRouter = () => {
           <Route path="/react-router" element={<ReactRouter />} />
           <Route path="/axios" element={<Axios />} />
           <Route path="/redux" element={<Redux />} />
+          <Route path="/jest" element={<Jest />} />
           <Route path="/versions" element={<Versions />} />
           <Route path="/tailwind" element={<Tailwind />} />
           <Route path="/mui" element={<MUI />} />

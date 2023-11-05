@@ -9,6 +9,7 @@ const navLinks = [
   { title: 'ESLint, Prettier', path: '/lint-format', parent: 'Settings' },
   { title: 'Axios', path: '/axios', parent: 'Settings' },
   { title: 'Redux', path: '/redux', parent: 'Settings' },
+  { title: 'Jest', path: '/jest', parent: 'Settings' },
   { title: 'Versions', path: '/versions', parent: 'Settings' },
   { title: 'Tailwind', path: '/tailwind', parent: 'UI Framworks' },
   { title: 'Mui', path: '/mui', parent: 'UI Framworks' },
