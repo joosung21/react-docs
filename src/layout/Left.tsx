@@ -18,6 +18,7 @@ const navLinks = [
   { title: 'useRef', path: '/use-ref', parent: 'Hooks' },
   { title: 'useContext', path: '/use-context', parent: 'Hooks' },
   { title: 'useReducer', path: '/use-reducer', parent: 'Hooks' },
+  { title: 'Redux', path: '/use-reducer', parent: 'Hooks' },
   { title: 'Todo', path: '/todo', parent: 'Ect' },
 ] as NavLink[]
 

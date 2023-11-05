@@ -11,6 +11,7 @@ import ReactRouter from 'pages/ReactRouter'
 import Versions from 'pages/Versions'
 import Tailwind from 'pages/Tailwind'
 import UseState from 'pages/UseState'
+import UseEffect from 'pages/UseEffect'
 
 const AppRouter = () => {
   return (
@@ -28,6 +29,7 @@ const AppRouter = () => {
           <Route path="/mui" element={<MUI />} />
           <Route path="/ui-sandbox" element={<UiSandbox />} />
           <Route path="/use-state" element={<UseState />} />
+          <Route path="/use-effect" element={<UseEffect />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
