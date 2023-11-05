@@ -1,10 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import Left from '../layout/Left'
-import NotFound from '../pages/NotFound'
-import Todo from '../pages/Todo'
-import MUI from '../pages/Mui'
-import UiSandbox from '../pages/UiSandbox'
+import Left from 'layout/Left'
+import NotFound from 'pages/NotFound'
+import Todo from 'pages/Todo'
+import MUI from 'pages/Mui'
+import UiSandbox from 'pages/UiSandbox'
+import FormControl from 'pages/FormControl'
 import CreateReactApp from 'pages/CreateReactApp'
 import LintFormat from 'pages/LintFormat'
 import ReactRouter from 'pages/ReactRouter'
@@ -15,6 +16,8 @@ import Redux from 'pages/Redux'
 import Tailwind from 'pages/Tailwind'
 import UseState from 'pages/UseState'
 import UseEffect from 'pages/UseEffect'
+import UseCallback from 'pages/UseCallback'
+import UseMemo from 'pages/UseMemo'
 
 const AppRouter = () => {
   return (
@@ -34,8 +37,11 @@ const AppRouter = () => {
           <Route path="/tailwind" element={<Tailwind />} />
           <Route path="/mui" element={<MUI />} />
           <Route path="/ui-sandbox" element={<UiSandbox />} />
+          <Route path="/form-control" element={<FormControl />} />
           <Route path="/use-state" element={<UseState />} />
           <Route path="/use-effect" element={<UseEffect />} />
+          <Route path="/use-callback" element={<UseCallback />} />
+          <Route path="/use-memo" element={<UseMemo />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

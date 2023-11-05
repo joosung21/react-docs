@@ -1,21 +1,35 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import Alert from '@mui/material/Alert'
+import Snackbar from '@mui/material/Snackbar'
 
 const UseEffect = () => {
+  const [mounted, setMounted] = React.useState(false)
   const [count, setCount] = useState(0)
 
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return
+    }
+
+    setMounted(false)
+  }
+
   useEffect(() => {
+    setMounted(true)
+
     const intervalId = setInterval(() => {
-      // 카운트가 1000 이상이면 멈춤
       if (count >= 1000) {
         clearInterval(intervalId)
         return
       }
 
-      setCount(count => count + 1)
+      setCount((count) => count + 1)
     }, 1000)
 
-    return () => clearInterval(intervalId)
+    return () => {
+      clearInterval(intervalId)
+    }
   }, [])
 
   return (
@@ -27,11 +41,20 @@ const UseEffect = () => {
       <div className="code">
         <pre>
           {`useEffect(() => {
+    setMounted(true)
+
     const intervalId = setInterval(() => {
-      setCount(count => count + 1)
+      if (count >= 1000) {
+        clearInterval(intervalId)
+        return
+      }
+
+      setCount((count) => count + 1)
     }, 1000)
 
-    return () => clearInterval(intervalId)
+    return () => {
+      clearInterval(intervalId)
+    }
   }, [])`}
         </pre>
       </div>
@@ -45,6 +68,17 @@ const UseEffect = () => {
           </div>
         ))}
       </div>
+
+      <Snackbar
+        open={mounted}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        autoHideDuration={6000}
+        onClose={handleClose}
+      >
+        <Alert variant="filled" onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          useEffect: 컴포넌트가 마운트됐어요!
+        </Alert>
+      </Snackbar>
     </div>
   )
 }

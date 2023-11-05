@@ -16,8 +16,8 @@ const navLinks = [
   { title: 'Tailwind', path: '/tailwind', parent: 'UI Control' },
   { title: 'Mui', path: '/mui', parent: 'UI Control' },
   { title: 'UI Sandbox', path: '/ui-sandbox', parent: 'UI Control' },
-  { title: 'Form Control', path: '/form', parent: 'UI Control' },
-  { title: 'Date Control', path: '/date', parent: 'UI Control' },
+  { title: 'Form Control', path: '/form-control', parent: 'UI Control' },
+  { title: 'Date Control', path: '/date-control', parent: 'UI Control' },
   { title: 'useState', path: '/use-state', parent: 'Hooks' },
   { title: 'useEffect', path: '/use-effect', parent: 'Hooks' },
   { title: 'useCallback', path: '/use-callback', parent: 'Hooks' },
@@ -25,7 +25,6 @@ const navLinks = [
   { title: 'useRef', path: '/use-ref', parent: 'Hooks' },
   { title: 'useContext', path: '/use-context', parent: 'Hooks' },
   { title: 'useReducer', path: '/use-reducer', parent: 'Hooks' },
-  { title: 'Redux', path: '/use-reducer', parent: 'Hooks' },
   { title: 'Todo', path: '/todo', parent: 'Ect' },
 ] as NavLink[]
 
@@ -55,7 +54,7 @@ const Left = () => {
         <div className="mb-2 px-6 opacity-30 text-sm">{groupTitle}</div>
       </div>
       {navLinks
-        .filter(link => link.parent === groupTitle)
+        .filter((link) => link.parent === groupTitle)
         .map((link, index) => (
           <Nav to={link.path} title={link.title} key={index}>
             {link.title}
@@ -75,7 +74,7 @@ const Left = () => {
       </Link>
 
       <div className="nav">
-        {groups.map(group => (
+        {groups.map((group) => (
           <NavGroup groupTitle={group} key={group} />
         ))}
         {/* <NavGroup groupTitle="Settings" />

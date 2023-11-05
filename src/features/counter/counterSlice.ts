@@ -27,14 +27,14 @@ export const counterSlice = createSlice({
   initialState,
   // reducers 필드를 통해 리듀서를 정의하고 관련 액션을 생성할 수 있습니다.
   reducers: {
-    increment: state => {
+    increment: (state) => {
       // Redux Toolkit을 사용하면 리듀서 내에서 "변경" 로직을 작성할 수 있습니다. 그것은
       // 실제로 상태를 변경하지 않습니다. 왜냐하면 Immer 라이브러리를 사용하기 때문인데,
       // 이 라이브러리는 "임시 상태"에 대한 변경을 감지하고, 그 변경사항을 기반으로
       // 새로운 불변 상태를 생성하기 때문입니다.
       state.value += 1
     },
-    decrement: state => {
+    decrement: (state) => {
       state.value -= 1
     },
     // `action.payload`의 내용을 선언하기 위해 PayloadAction 타입을 사용하세요.
@@ -44,16 +44,16 @@ export const counterSlice = createSlice({
   },
   // `extraReducers` 필드를 사용하면 슬라이스가 다른 곳에서 정의된 액션들을 처리할 수 있습니다,
   // 여기에는 createAsyncThunk에 의해 생성된 액션들이나 다른 슬라이스의 액션들도 포함됩니다.
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, state => {
+      .addCase(incrementAsync.pending, (state) => {
         state.status = 'loading'
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
         state.status = 'idle'
         state.value += action.payload
       })
-      .addCase(incrementAsync.rejected, state => {
+      .addCase(incrementAsync.rejected, (state) => {
         state.status = 'failed'
       })
   },

@@ -8,6 +8,7 @@ const Todo = () => {
         <li>라우팅 파라미터</li>
         <li>리액트 공식문서</li>
         <li>리액트 DevTool</li>
+        <li>폼 Validation</li>
 
         <hr className="my-2" />
 

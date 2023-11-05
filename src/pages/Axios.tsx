@@ -9,7 +9,7 @@ const Axios = () => {
   const getData = () => {
     setLoading(true)
     setData([])
-    axios.get('https://my-json-server.typicode.com/typicode/demo/posts').then(res => {
+    axios.get('https://my-json-server.typicode.com/typicode/demo/posts').then((res) => {
       setData(res.data)
       setLoading(false)
     })
