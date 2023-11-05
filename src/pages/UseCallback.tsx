@@ -17,7 +17,7 @@ const UseCallback = () => {
 
   return (
     <div className="limit-width">
-      <div className="page-title">UseCallback</div>
+      <div className="page-title">useCallback</div>
 
       <div className="code">
         <p>- useCallback은 특정 함수를 메모이제이션(Memoization)하는 데 사용</p>
