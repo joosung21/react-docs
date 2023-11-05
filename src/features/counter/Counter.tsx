@@ -46,7 +46,7 @@ export function Counter() {
         </IconButton>
       </div>
 
-      <Card sx={{ minWidth: 600, maxWidth: 800 }}>
+      <Card sx={{ minWidth: 600, maxWidth: 800, backgroundColor: '#f1f1ff', userSelect: 'none' }}>
         <CardHeader title="Counter Component" />
         <CardContent>
           <div className={styles.row}>

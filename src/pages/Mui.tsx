@@ -1,5 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
+import Chip from '@mui/material/Chip'
 
 const Mui = () => {
   return (
@@ -30,11 +32,20 @@ import '@fontsource/roboto/700.css'`}
         </pre>
       </div>
 
-      <Button variant="contained">Hello World</Button>
+      <div className="my-8">
+        <Button variant="contained">Test Button</Button>
+      </div>
+      <div className="my-4">
+        <TextField label="TextField" />
+      </div>
+      <div className="my-4 flex space-x-2">
+        <Chip label="Chip Filled" />
+        <Chip label="Chip Outlined" variant="outlined" />
+      </div>
 
       <br />
 
-      <div className="mt-4">MUI 문서</div>
+      <div>MUI 문서</div>
       <a
         href="https://mui.com/material-ui/getting-started/installation/"
         target="_blank"

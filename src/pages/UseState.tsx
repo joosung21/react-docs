@@ -5,11 +5,10 @@ const UseState = () => {
   const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <div className="limit-width">
       <div className="page-title">useState</div>
-
       <div className="mt-4 mb-4 text-xl">count: {count}</div>
-      <div className="flex space-x-2">
+      <div className="flex space-x-2 mb-4">
         <Button variant="contained" color="primary" onClick={() => setCount(count + 1)}>
           +
         </Button>
@@ -30,6 +29,13 @@ const UseState = () => {
           reset
         </Button>
       </div>
+
+      <div className="code">const [count, setCount] = useState(0)</div>
+      <div className="code">setCount(count + 1)</div>
+      <div className="code">setCount(count - 1)</div>
+      <div className="code">setCount(count * 2)</div>
+      <div className="code">setCount(count / 2)</div>
+      <div className="code">setCount(0)</div>
     </div>
   )
 }

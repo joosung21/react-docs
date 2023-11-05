@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import { NavLink, NavProps } from './Left.d'
 import logo from 'assets/logo.svg'
+import jay from 'assets/jay.jpg'
+import Avatar from '@mui/material/Avatar'
 
 const navLinks = [
   { title: 'Create React App', path: '/create-react-app', parent: 'Settings' },
@@ -11,9 +13,11 @@ const navLinks = [
   { title: 'Redux', path: '/redux', parent: 'Settings' },
   { title: 'Jest', path: '/jest', parent: 'Settings' },
   { title: 'Versions', path: '/versions', parent: 'Settings' },
-  { title: 'Tailwind', path: '/tailwind', parent: 'UI Framworks' },
-  { title: 'Mui', path: '/mui', parent: 'UI Framworks' },
-  { title: 'UI Sandbox', path: '/ui-sandbox', parent: 'UI Framworks' },
+  { title: 'Tailwind', path: '/tailwind', parent: 'UI Control' },
+  { title: 'Mui', path: '/mui', parent: 'UI Control' },
+  { title: 'UI Sandbox', path: '/ui-sandbox', parent: 'UI Control' },
+  { title: 'Form Control', path: '/form', parent: 'UI Control' },
+  { title: 'Date Control', path: '/date', parent: 'UI Control' },
   { title: 'useState', path: '/use-state', parent: 'Hooks' },
   { title: 'useEffect', path: '/use-effect', parent: 'Hooks' },
   { title: 'useCallback', path: '/use-callback', parent: 'Hooks' },
@@ -63,8 +67,11 @@ const Left = () => {
   return (
     <div className="left bg-blue-950 text-sky-300">
       <Link to={'/'} className="left-header">
-        <img src={logo} alt="logo" className="rotate-logo w-36 mx-auto" />
-        <div className="mb-5 text-3xl text-center">Joosung&apos;s React</div>
+        <img src={logo} alt="logo" className="rotate-logo w-32 mx-auto" />
+        <div className="mb-4 text-center poppins" style={{ fontSize: '1.8rem' }}>
+          Joosung&apos;s React
+        </div>
+        <Avatar alt="Remy Sharp" src={jay} className="mx-auto" sx={{ width: 64, height: 64 }} />
       </Link>
 
       <div className="nav">
