@@ -4,6 +4,7 @@ import Left from '../layout/Left'
 import NotFound from '../pages/NotFound'
 import Todo from '../pages/Todo'
 import MUI from '../pages/Mui'
+import UiSandbox from '../pages/UiSandbox'
 import CreateReactApp from 'pages/CreateReactApp'
 import LintFormat from 'pages/LintFormat'
 import ReactRouter from 'pages/ReactRouter'
@@ -18,13 +19,14 @@ const AppRouter = () => {
 
       <div className="main">
         <Routes>
-          <Route path="/" element={<Navigate to="/setting1" />} />
+          <Route path="/" element={<Navigate to="/create-react-app" />} />
           <Route path="/create-react-app" element={<CreateReactApp />} />
           <Route path="/lint-format" element={<LintFormat />} />
           <Route path="/react-router" element={<ReactRouter />} />
           <Route path="/versions" element={<Versions />} />
           <Route path="/tailwind" element={<Tailwind />} />
           <Route path="/mui" element={<MUI />} />
+          <Route path="/ui-sandbox" element={<UiSandbox />} />
           <Route path="/use-state" element={<UseState />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="*" element={<NotFound />} />

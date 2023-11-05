@@ -10,6 +10,7 @@ const navLinks = [
   { title: 'Versions', path: '/versions', parent: 'Settings' },
   { title: 'Tailwind', path: '/tailwind', parent: 'UI Framworks' },
   { title: 'Mui', path: '/mui', parent: 'UI Framworks' },
+  { title: 'UI Sandbox', path: '/ui-sandbox', parent: 'UI Framworks' },
   { title: 'useState', path: '/use-state', parent: 'Hooks' },
   { title: 'useEffect', path: '/use-effect', parent: 'Hooks' },
   { title: 'useCallback', path: '/use-callback', parent: 'Hooks' },
