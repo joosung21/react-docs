@@ -4,10 +4,11 @@ import { NavLink, NavProps } from './Left.d'
 import logo from 'assets/logo.svg'
 
 const navLinks = [
-  { title: 'React, Typescript, Redux, Sass', path: '/create-react-app', parent: 'Settings' },
+  { title: 'Create React App', path: '/create-react-app', parent: 'Settings' },
   { title: 'React-router', path: '/react-router', parent: 'Settings' },
   { title: 'ESLint, Prettier', path: '/lint-format', parent: 'Settings' },
   { title: 'Axios', path: '/axios', parent: 'Settings' },
+  { title: 'Redux', path: '/redux', parent: 'Settings' },
   { title: 'Versions', path: '/versions', parent: 'Settings' },
   { title: 'Tailwind', path: '/tailwind', parent: 'UI Framworks' },
   { title: 'Mui', path: '/mui', parent: 'UI Framworks' },

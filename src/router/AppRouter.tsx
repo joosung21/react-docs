@@ -10,6 +10,7 @@ import LintFormat from 'pages/LintFormat'
 import ReactRouter from 'pages/ReactRouter'
 import Versions from 'pages/Versions'
 import Axios from 'pages/Axios'
+import Redux from 'pages/Redux'
 import Tailwind from 'pages/Tailwind'
 import UseState from 'pages/UseState'
 import UseEffect from 'pages/UseEffect'
@@ -26,6 +27,7 @@ const AppRouter = () => {
           <Route path="/lint-format" element={<LintFormat />} />
           <Route path="/react-router" element={<ReactRouter />} />
           <Route path="/axios" element={<Axios />} />
+          <Route path="/redux" element={<Redux />} />
           <Route path="/versions" element={<Versions />} />
           <Route path="/tailwind" element={<Tailwind />} />
           <Route path="/mui" element={<MUI />} />
