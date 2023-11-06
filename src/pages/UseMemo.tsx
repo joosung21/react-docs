@@ -58,7 +58,7 @@ const calculatedFactorial = useMemo(() => {
       </div>
 
       <div className="code">
-        <pre>
+        <pre style={{ whiteSpace: 'pre-wrap' }}>
           {`Factorial이란 양의 정수 n에 대해 1부터 n까지 모든 정수를 곱한 것을 말합니다. n의 factorial은 n!로 나타내며, 다음과 같이 정의됩니다.
 
 n! = n × (n-1) × (n-2) × ... × 3 × 2 × 1
