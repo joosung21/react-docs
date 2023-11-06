@@ -21,6 +21,7 @@ import UseMemo from 'pages/UseMemo'
 import UseRef from 'pages/UseRef'
 import UseContext from 'pages/UseContext'
 import UseReducer from 'pages/UseReducer'
+import DateControl from 'pages/DateControl'
 
 const AppRouter = () => {
   return (
@@ -41,6 +42,7 @@ const AppRouter = () => {
           <Route path="/mui" element={<MUI />} />
           <Route path="/ui-sandbox" element={<UiSandbox />} />
           <Route path="/form-control" element={<FormControl />} />
+          <Route path="/date-control" element={<DateControl />} />
           <Route path="/use-state" element={<UseState />} />
           <Route path="/use-effect" element={<UseEffect />} />
           <Route path="/use-callback" element={<UseCallback />} />
