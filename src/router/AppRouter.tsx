@@ -18,6 +18,7 @@ import UseState from 'pages/UseState'
 import UseEffect from 'pages/UseEffect'
 import UseCallback from 'pages/UseCallback'
 import UseMemo from 'pages/UseMemo'
+import UseRef from 'pages/UseRef'
 
 const AppRouter = () => {
   return (
@@ -42,6 +43,7 @@ const AppRouter = () => {
           <Route path="/use-effect" element={<UseEffect />} />
           <Route path="/use-callback" element={<UseCallback />} />
           <Route path="/use-memo" element={<UseMemo />} />
+          <Route path="/use-ref" element={<UseRef />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
