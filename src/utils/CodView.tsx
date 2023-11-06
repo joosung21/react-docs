@@ -4,6 +4,8 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { materialOceanic } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import IconButton from '@mui/material/IconButton'
 import CounterIconCopy from '@mui/icons-material/ContentCopy'
+import { useAppDispatch } from 'app/hooks'
+import { openSnackbar } from 'features/snackbar/appSnackbarSlice'
 
 interface CodeViewProps {
   code: string
@@ -11,14 +13,16 @@ interface CodeViewProps {
 }
 
 const CodeView: React.FC<CodeViewProps> = ({ code, language = 'typescript' }) => {
+  const dispatch = useAppDispatch()
+
   const copyToClipboard = useCallback(() => {
     navigator.clipboard
       .writeText(code)
       .then(() => {
-        alert('코드가 클립보드에 복사되었습니다!')
+        dispatch(openSnackbar({ message: '코드가 클립보드에 복사되었습니다!', type: 'success' }))
       })
-      .catch((err) => {
-        console.error('클립보드 복사에 실패했습니다: ', err)
+      .catch(() => {
+        dispatch(openSnackbar({ message: '클립보드 복사에 실패했습니다.', type: 'error' }))
       })
   }, [code])
 
