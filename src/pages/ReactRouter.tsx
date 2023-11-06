@@ -4,6 +4,7 @@ const ReactRouter = () => {
   return (
     <div className="limit-width">
       <div className="page-title">React-router</div>
+      <div className="page-subtitle">라우터 설정</div>
       <div>세팅참고</div>
       <a
         href="https://goddaehee.tistory.com/305"

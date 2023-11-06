@@ -4,9 +4,9 @@ const Todo = () => {
   return (
     <div className="todoList">
       <ul style={{ listStyle: 'square' }}>
-        <li>Firebase 배포</li>
+        <li>프로필 페이지</li>
         <li>라우팅 파라미터</li>
-        <li>리액트 공식문서</li>
+        <li>리액트 공식문서 1독</li>
         <li>리액트 DevTool</li>
         <li>폼 Validation</li>
 
