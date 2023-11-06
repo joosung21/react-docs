@@ -13,7 +13,7 @@ const UseRef = () => {
   const onToggleBtnClick = () => {
     const width = TextFd.current?.style.getPropertyValue('width')
 
-    inputEl.current?.setAttribute('placeholder', width === '100%' ? '200px' : '100%')
+    inputEl.current?.setAttribute('placeholder', width === '100%' ? '200px' : 'Full Width')
     TextFd.current?.style.setProperty('width', width === '100%' ? '200px' : '100%')
   }
 
@@ -25,7 +25,7 @@ const UseRef = () => {
         id="outlined-basic"
         ref={TextFd}
         inputRef={inputEl}
-        label=""
+        placeholder="200px"
         size="small"
         sx={{ width: '200px' }}
       />

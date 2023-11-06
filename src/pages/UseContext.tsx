@@ -48,8 +48,11 @@ const ThemeToggleButton: React.FC = () => {
       <Typography variant="h6" gutterBottom>
         Child1 Component
       </Typography>
+      <Typography variant="subtitle1" gutterBottom>
+        현재 테마: {theme}
+      </Typography>
       <Button variant="contained" onClick={toggleTheme}>
-        현재 테마: {theme}. 테마 변경하기.
+        테마 변경하기
       </Button>
     </div>
   )
@@ -61,8 +64,9 @@ const ThemedBackground: React.FC = () => {
 
   // 배경색을 설정하기 위한 스타일 객체
   const backgroundStyle = {
-    backgroundColor: theme === 'light' ? '#f1f1f1' : '#333',
-    color: theme === 'light' ? '#333' : '#f1f1f1',
+    transition: 'background 0.3s ease',
+    backgroundColor: theme === 'light' ? '#f1f1f4' : '#333',
+    color: theme === 'light' ? '#36a' : '#f1f1f1',
     padding: '50px',
     borderRadius: '10px',
     margin: '16px 0',
@@ -109,8 +113,11 @@ const ThemeToggleButton: React.FC = () => {
       <Typography variant="h6" gutterBottom>
         Child1 Component
       </Typography>
+      <Typography variant="subtitle1" gutterBottom>
+        현재 테마: {theme}
+      </Typography>
       <Button variant="contained" onClick={toggleTheme}>
-        현재 테마: {theme}. 테마 변경하기.
+        테마 변경하기
       </Button>
     </div>
   )

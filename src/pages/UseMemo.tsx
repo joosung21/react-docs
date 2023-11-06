@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react'
 import TextField from '@mui/material/TextField'
 
 const UseMemo = () => {
-  const [num, setNum] = useState(0)
+  const [num, setNum] = useState(1)
 
   const getFactorial = (val: number): number => {
     if (val === 0) return 1

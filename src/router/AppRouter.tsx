@@ -20,6 +20,7 @@ import UseCallback from 'pages/UseCallback'
 import UseMemo from 'pages/UseMemo'
 import UseRef from 'pages/UseRef'
 import UseContext from 'pages/UseContext'
+import UseReducer from 'pages/UseReducer'
 
 const AppRouter = () => {
   return (
@@ -46,6 +47,7 @@ const AppRouter = () => {
           <Route path="/use-memo" element={<UseMemo />} />
           <Route path="/use-ref" element={<UseRef />} />
           <Route path="/use-context" element={<UseContext />} />
+          <Route path="/use-reducer" element={<UseReducer />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
