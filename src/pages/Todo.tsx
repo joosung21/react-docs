@@ -4,9 +4,7 @@ const Todo = () => {
   return (
     <div className="todoList">
       <ul style={{ listStyle: 'square' }}>
-        <li>UI Sandbox 디버깅</li>
-        <li>전역 store 설정, 스낵바 생성</li>
-        <li>클립보드 생성 스낵바로 변경</li>
+        <li>코드뷰 변경</li>
         <li>프로필 페이지</li>
         <li>라우팅 파라미터</li>
         <li>리액트 공식문서 마스터</li>

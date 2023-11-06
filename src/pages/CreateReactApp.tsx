@@ -1,13 +1,14 @@
 import React from 'react'
+import CodeView from 'utils/CodView'
 
 const CreateReactApp = () => {
   return (
     <div className="limit-width">
       <div className="page-title">Create React App</div>
       <div className="page-subtitle">React, Typescript, Redux, Sass 설치를 한방에 하자</div>
-      <div className="code">npx create-react-app my-app --template typescript</div>
-      <div className="code">cd my-app</div>
-      <div className="code">npm install @reduxjs/toolkit react-redux sass</div>
+      <CodeView language="bash" code="npx create-react-app my-app --template typescript" />
+      <CodeView language="bash" code="cd my-app" />
+      <CodeView language="bash" code="npm install @reduxjs/toolkit react-redux sass" />
 
       <div className="my-4 mt-8">
         <a

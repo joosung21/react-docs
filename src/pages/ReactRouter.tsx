@@ -2,7 +2,6 @@ import React from 'react'
 import CodeView from 'utils/CodView'
 
 const ReactRouter = () => {
-  const codeString2 = 'npm install react-router-dom'
   const codeString1 = `// App.tsx
 import React, { Component } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -33,7 +32,11 @@ export default App;`
     <div className="limit-width">
       <div className="page-title">React-router</div>
       <div className="page-subtitle">라우터 설정</div>
-      <div>세팅참고</div>
+
+      <CodeView language="bash" code="npm install react-router-dom" />
+      <CodeView code={codeString1} />
+
+      <div className="mt-8">세팅참고</div>
       <a
         href="https://goddaehee.tistory.com/305"
         target="_blank"
@@ -42,15 +45,6 @@ export default App;`
       >
         https://goddaehee.tistory.com/305
       </a>
-
-      <br />
-      <br />
-
-      <CodeView language="bash" code={codeString2} />
-
-      <br />
-
-      <CodeView code={codeString1} />
     </div>
   )
 }

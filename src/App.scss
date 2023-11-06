@@ -168,3 +168,23 @@ dl {
   width: 0;
 }
 
+.code-view {
+  position: relative;
+  pre {
+    border-radius: 4px;
+    padding: 16px 16px !important;
+  }
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+

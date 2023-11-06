@@ -1,11 +1,14 @@
 // CodeView.tsx
 import React, { useCallback } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { materialOceanic } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import IconButton from '@mui/material/IconButton'
 import CounterIconCopy from '@mui/icons-material/ContentCopy'
 import { useAppDispatch } from 'app/hooks'
 import { openSnackbar } from 'features/snackbar/appSnackbarSlice'
+
+// code style colors
+// https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/master/AVAILABLE_STYLES_PRISM.MD
 
 interface CodeViewProps {
   code: string
@@ -27,15 +30,13 @@ const CodeView: React.FC<CodeViewProps> = ({ code, language = 'typescript' }) =>
   }, [code])
 
   return (
-    <div className="relative">
-      <IconButton
-        aria-label="copy"
-        onClick={copyToClipboard}
-        style={{ position: 'absolute', top: 12, right: 8, zIndex: 1, color: 'rgb(138, 150, 156)' }}
-      >
-        <CounterIconCopy />
-      </IconButton>
-      <SyntaxHighlighter language={language} style={materialOceanic}>
+    <div className="code-view">
+      <div className="copy-button">
+        <IconButton aria-label="copy" onClick={copyToClipboard}>
+          <CounterIconCopy />
+        </IconButton>
+      </div>
+      <SyntaxHighlighter language={language} style={base16AteliersulphurpoolLight}>
         {code}
       </SyntaxHighlighter>
     </div>
