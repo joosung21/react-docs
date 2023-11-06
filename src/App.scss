@@ -127,7 +127,9 @@ dl {
   padding-top: 8px;
 
   .react-datepicker {
+    user-select: none;
     border: none;
+    padding: 10px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 0;
     .react-datepicker__triangle {
@@ -153,7 +155,7 @@ dl {
 
 .react-datepicker__navigation-icon {
   position: relative;
-  top: 5px;
+  top: 14px;
   font-size: 20px;
   width: 0;
 }

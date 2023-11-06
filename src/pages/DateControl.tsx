@@ -43,7 +43,7 @@ const DateControl = () => {
         />
       </div>
 
-      <div>React Datepicker-</div>
+      <div>React Datepicker</div>
       <a href="https://reactdatepicker.com/" target="_blank" rel="noreferrer" className="text-link">
         https://reactdatepicker.com/
       </a>
@@ -85,24 +85,6 @@ import { ko } from "date-fns/esm/locale"
       >
         https://doooodle932.tistory.com/150
       </a>
-
-      {/* <div className="code">
-        <pre>
-          {`const [state, dispatch] = useReducer(reducer, initialState)
-
-const adoptDog = (name: string) => dispatch({ type: 'ADOPT', payload: name })
-const returnDog = (name: string) => dispatch({ type: 'RETURN', payload: name })`}
-        </pre>
-      </div> */}
-
-      {/* 스타일 커스텀 참고 https://doooodle932.tistory.com/150 */}
-      {/* npm install date-fns --save */}
-      {/* import { ko } from "date-fns/esm/locale"; */}
-      {/* <DatePicker
-        locale={ko}
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-      /> */}
     </div>
   )
 }
