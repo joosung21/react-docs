@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
 // Pages
+import Profile from 'pages/Profile'
 import Left from 'layout/Left'
 import NotFound from 'pages/NotFound'
 import Todo from 'pages/Todo'
@@ -42,7 +43,8 @@ const AppRouter = () => {
 
       <div className="main" ref={mainDivRef}>
         <Routes>
-          <Route path="/" element={<Navigate to="/create-react-app" />} />
+          <Route path="/" element={<Navigate to="/profile" />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/create-react-app" element={<CreateReactApp />} />
           <Route path="/lint-format" element={<LintFormat />} />
           <Route path="/react-router" element={<ReactRouter />} />

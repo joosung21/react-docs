@@ -4,7 +4,6 @@ const Todo = () => {
   return (
     <div className="todoList">
       <ul style={{ listStyle: 'square' }}>
-        <li>프로필 페이지</li>
         <li>D3, WebGl</li>
         <li>페이지네이션</li>
         <li>라우팅 파라미터</li>
