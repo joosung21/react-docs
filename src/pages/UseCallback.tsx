@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import TextField from '@mui/material/TextField'
 import { Button } from '@mui/material'
+import CodeView from 'utils/CodeView'
 
 const add = (first: number, second: number) => first + second
 
@@ -57,11 +58,7 @@ const UseCallback = () => {
         <div>Result: {additionResult()}</div>
       </div>
 
-      <div className="code">
-        {
-          'const additionResult = useCallback(() => add(firstVal, secondVal), [firstVal, secondVal])'
-        }
-      </div>
+      <CodeView code="const additionResult = useCallback(() => add(firstVal, secondVal), [firstVal, secondVal])" />
     </div>
   )
 }

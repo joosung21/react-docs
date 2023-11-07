@@ -1,24 +1,12 @@
 import React from 'react'
+import CodeView from 'utils/CodeView'
 
-const Jest = () => {
-  return (
-    <div className="limit-width">
-      <div className="page-title">Jest</div>
-
-      <div>babel.config.js</div>
-      <div className="code">
-        <pre>
-          {`export const presets = [
+const codeString1 = `export const presets = [
   ['@babel/preset-env', { targets: { node: 'current' } }],
   '@babel/preset-typescript',
-`}
-        </pre>
-      </div>
+`
 
-      <div className="mt-8">jest.config.ts</div>
-      <div className="code">
-        <pre>
-          {`export default {
+const codeString2 = `export default {
   preset: 'ts-jest',
   rootDir: '.',
   testRegex: '.*/src/.*\\.test\\.(t|j)sx?$',
@@ -30,15 +18,9 @@ const Jest = () => {
     '<rootDir>/dist/',
     '<rootDir>/assets/',
   ],
-}
-`}
-        </pre>
-      </div>
+}`
 
-      <div className="mt-8">fileName.test.ts</div>
-      <div className="code">
-        <pre>
-          {`describe('counter reducer', () => {
+const codeString3 = `describe('counter reducer', () => {
   const initialState: CounterState = {
     value: 3,
     status: 'idle',
@@ -65,9 +47,22 @@ const Jest = () => {
     expect(actual.value).toEqual(5)
   })
 })
-`}
-        </pre>
-      </div>
+`
+
+const Jest = () => {
+  return (
+    <div className="limit-width">
+      <div className="page-title">Jest</div>
+      <div className="page-subtitle">유닛테스트</div>
+
+      <div>babel.config.js</div>
+      <CodeView code={codeString1} />
+
+      <div className="mt-8">jest.config.ts</div>
+      <CodeView code={codeString2} />
+
+      <div className="mt-8">ex) counterSlice.test.ts</div>
+      <CodeView code={codeString3} />
     </div>
   )
 }

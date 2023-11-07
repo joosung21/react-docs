@@ -1,11 +1,15 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import React, { useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
+
+// Pages
 import Left from 'layout/Left'
 import NotFound from 'pages/NotFound'
 import Todo from 'pages/Todo'
 import MUI from 'pages/Mui'
 import UiSandbox from 'pages/UiSandbox'
 import FormControl from 'pages/FormControl'
+import DateControl from 'pages/DateControl'
 import CreateReactApp from 'pages/CreateReactApp'
 import LintFormat from 'pages/LintFormat'
 import ReactRouter from 'pages/ReactRouter'
@@ -21,14 +25,22 @@ import UseMemo from 'pages/UseMemo'
 import UseRef from 'pages/UseRef'
 import UseContext from 'pages/UseContext'
 import UseReducer from 'pages/UseReducer'
-import DateControl from 'pages/DateControl'
 
 const AppRouter = () => {
+  const mainDivRef = useRef<HTMLDivElement>(null)
+  const location = useLocation()
+
+  useEffect(() => {
+    if (mainDivRef.current) {
+      mainDivRef.current.scrollTop = 0
+    }
+  }, [location]) // location이 변경될 때마다 scrollTop을 0으로 초기화
+
   return (
-    <BrowserRouter>
+    <>
       <Left />
 
-      <div className="main">
+      <div className="main" ref={mainDivRef}>
         <Routes>
           <Route path="/" element={<Navigate to="/create-react-app" />} />
           <Route path="/create-react-app" element={<CreateReactApp />} />
@@ -54,7 +66,7 @@ const AppRouter = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </>
   )
 }
 

@@ -6,6 +6,8 @@ const Todo = () => {
       <ul style={{ listStyle: 'square' }}>
         <li>코드뷰 변경</li>
         <li>프로필 페이지</li>
+        <li>D3, WebGl</li>
+        <li>페이지네이션</li>
         <li>라우팅 파라미터</li>
         <li>리액트 공식문서 마스터</li>
         <li>리액트 DevTool</li>

@@ -4,11 +4,24 @@ import 'react-datepicker/dist/react-datepicker.css'
 import { TextField } from '@mui/material'
 import EventIcon from '@mui/icons-material/Event'
 import { ko } from 'date-fns/esm/locale'
+import CodeView from 'utils/CodeView'
 
 interface Props {
   value?: string
   onClick?: () => void
 }
+
+const codeString1 = `import { ko } from "date-fns/esm/locale"
+
+<DatePicker
+  selected={startDate}
+  locale={ko}
+  dateFormat="yyyy년 M월 d일"
+  minDate={new Date('2023-11-01')}
+  maxDate={new Date()}
+  onChange={(date) => date && setStartDate(date)}
+  customInput={<CustomInput />}
+/>`
 
 const DateControl = () => {
   const [startDate, setStartDate] = useState<Date | null>(new Date())
@@ -58,23 +71,9 @@ const DateControl = () => {
         Locale, dateFormat
       </a>
 
-      <div className="code">
-        <pre>
-          {`npm install date-fns --save
+      <CodeView language="bash" code="npm install date-fns --save" />
 
-import { ko } from "date-fns/esm/locale"
-
-<DatePicker
-  selected={startDate}
-  locale={ko}
-  dateFormat="yyyy년 M월 d일"
-  minDate={new Date('2023-11-01')}
-  maxDate={new Date()}
-  onChange={(date) => date && setStartDate(date)}
-  customInput={<CustomInput />}
-/>`}
-        </pre>
-      </div>
+      <CodeView code={codeString1} />
 
       <div className="mt-4">커스텀 스타일 참고</div>
       <a

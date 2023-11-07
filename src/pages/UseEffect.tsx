@@ -1,22 +1,34 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Alert from '@mui/material/Alert'
-import Snackbar from '@mui/material/Snackbar'
+import { useAppDispatch } from 'app/hooks'
+import { openSnackbar } from 'features/snackbar/appSnackbarSlice'
+import CodeView from 'utils/CodeView'
 
-const UseEffect = () => {
-  const [mounted, setMounted] = React.useState(false)
-  const [count, setCount] = useState(0)
+const codeString1 = `const [count, setCount] = useState(0)
 
-  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
+useEffect(() => {
+  dispatch(openSnackbar({ message: 'useEffect: 컴포넌트가 마운트됐어요!', type: 'success' }))
+
+  const intervalId = setInterval(() => {
+    if (count >= 1000) {
+      clearInterval(intervalId)
       return
     }
 
-    setMounted(false)
+    setCount((count) => count + 1)
+  }, 1000)
+
+  return () => {
+    clearInterval(intervalId)
   }
+}, [])`
+
+const UseEffect = () => {
+  const dispatch = useAppDispatch()
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    setMounted(true)
+    dispatch(openSnackbar({ message: 'useEffect: 컴포넌트가 마운트됐어요!', type: 'success' }))
 
     const intervalId = setInterval(() => {
       if (count >= 1000) {
@@ -35,29 +47,9 @@ const UseEffect = () => {
   return (
     <div className="limit-width">
       <div className="page-title">useEffect</div>
+      <div className="page-subtitle">컴포넌트 렌더링 시 부수 효과 관리</div>
 
-      <div className="code">const [count, setCount] = useState(0)</div>
-
-      <div className="code">
-        <pre>
-          {`useEffect(() => {
-    setMounted(true)
-
-    const intervalId = setInterval(() => {
-      if (count >= 1000) {
-        clearInterval(intervalId)
-        return
-      }
-
-      setCount((count) => count + 1)
-    }, 1000)
-
-    return () => {
-      clearInterval(intervalId)
-    }
-  }, [])`}
-        </pre>
-      </div>
+      <CodeView code={codeString1} />
 
       <h1 className="text-lg">I have rendered {count} times!</h1>
 
@@ -68,17 +60,6 @@ const UseEffect = () => {
           </div>
         ))}
       </div>
-
-      <Snackbar
-        open={mounted}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        autoHideDuration={6000}
-        onClose={handleClose}
-      >
-        <Alert variant="filled" onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          useEffect: 컴포넌트가 마운트됐어요!
-        </Alert>
-      </Snackbar>
     </div>
   )
 }

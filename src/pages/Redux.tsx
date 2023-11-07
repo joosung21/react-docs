@@ -4,7 +4,7 @@ import { AlertColor, Button } from '@mui/material'
 import { useAppDispatch, useAppSelector } from 'app/hooks'
 import { openSnackbar } from 'features/snackbar/appSnackbarSlice'
 import { selectSnackbar } from 'features/snackbar/appSnackbarSlice'
-import CodeView from 'utils/CodView'
+import CodeView from 'utils/CodeView'
 
 const snackBarMsgs = [
   { message: '성공적으로 저장하였습니다.', type: 'success', btnText: '성공 스낵바' },
@@ -17,7 +17,7 @@ const Redux = () => {
   const dispatch = useAppDispatch()
   const snackbar = useAppSelector(selectSnackbar)
 
-  const codeString = `// 스낵바 전역 상태
+  const codeString = `// Snackbar states
 key: ${snackbar.key}
 message: ${snackbar.message}
 type: ${snackbar.type}
@@ -26,8 +26,10 @@ opened: ${snackbar.opened}`
   return (
     <div>
       <div className="page-title">Redux</div>
+      <div className="page-subtitle">전역 상태관리</div>
 
-      <div className="my-8 space-x-2">
+      <div>Redux를 이용한 앱 전역 Snackbar</div>
+      <div className="mt-2 mb-8 space-x-2">
         {snackBarMsgs.map((msg, index) => (
           <Button
             key={index}

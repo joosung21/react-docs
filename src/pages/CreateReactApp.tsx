@@ -1,5 +1,5 @@
 import React from 'react'
-import CodeView from 'utils/CodView'
+import CodeView from 'utils/CodeView'
 
 const CreateReactApp = () => {
   return (

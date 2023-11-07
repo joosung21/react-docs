@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import LoadingButton from '@mui/lab/LoadingButton'
+import CodeView from 'utils/CodeView'
 
 const Axios = () => {
   const [data, setData] = useState([])
@@ -16,8 +17,9 @@ const Axios = () => {
   }
 
   return (
-    <div>
+    <div className="limit-width">
       <div className="page-title">Axios</div>
+      <div className="page-subtitle">API 통신</div>
 
       <div>세팅참고</div>
       <a
@@ -31,7 +33,7 @@ const Axios = () => {
 
       <br />
 
-      <div className="code">npm install axios</div>
+      <CodeView language="bash" code="npm install axios" />
 
       <br />
 
@@ -64,7 +66,8 @@ const Axios = () => {
         <div className="code">
           {data.map((item: { id: number; title: string }) => (
             <div key={item.id}>
-              id: {item.id}, title: {item.title}
+              {/* item을 json으로 출력 */}
+              {JSON.stringify(item)}
             </div>
           ))}
         </div>

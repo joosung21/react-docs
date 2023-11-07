@@ -1,6 +1,37 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react'
 import Button from '@mui/material/Button'
 import { Typography } from '@mui/material'
+import CodeView from 'utils/CodeView'
+
+const codeString = `const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+
+// 테마 사용을 위한 커스텀 훅
+const useTheme = () => {
+  const context = useContext(ThemeContext)
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider')
+  }
+  return context
+}
+
+// 자식 컴포넌트 예제
+const ThemeToggleButton: React.FC = () => {
+  const { theme, toggleTheme } = useTheme()
+
+  return (
+    <div className="p-8 text-center border-2 rounded-xl">
+      <Typography variant="h6" gutterBottom>
+        Child1 Component
+      </Typography>
+      <Typography variant="subtitle1" gutterBottom>
+        현재 테마: {theme}
+      </Typography>
+      <Button variant="contained" onClick={toggleTheme}>
+        테마 변경하기
+      </Button>
+    </div>
+  )
+}`
 
 // 테마 타입 정의
 type Theme = 'light' | 'dark'
@@ -88,42 +119,14 @@ const UseContext: React.FC = () => {
     <ThemeProvider>
       <div className="limit-width">
         <div className="page-title">useContext</div>
+        <div className="page-subtitle">
+          컴포넌트 트리 안에서 전역적인 데이터를 공유할 수 있게 해주는 Hook
+        </div>
+
         <ThemeToggleButton />
         <ThemedBackground />
 
-        <div className="code">
-          <pre>
-            {`const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
-
-// 테마 사용을 위한 커스텀 훅
-const useTheme = () => {
-  const context = useContext(ThemeContext)
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider')
-  }
-  return context
-}
-
-// 자식 컴포넌트 예제
-const ThemeToggleButton: React.FC = () => {
-  const { theme, toggleTheme } = useTheme()
-
-  return (
-    <div className="p-8 text-center border-2 rounded-xl">
-      <Typography variant="h6" gutterBottom>
-        Child1 Component
-      </Typography>
-      <Typography variant="subtitle1" gutterBottom>
-        현재 테마: {theme}
-      </Typography>
-      <Button variant="contained" onClick={toggleTheme}>
-        테마 변경하기
-      </Button>
-    </div>
-  )
-}`}
-          </pre>
-        </div>
+        <CodeView code={codeString} />
       </div>
     </ThemeProvider>
   )

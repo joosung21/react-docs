@@ -2,38 +2,39 @@ import React from 'react'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 import Chip from '@mui/material/Chip'
+import CodeView from 'utils/CodeView'
+
+const codeString1 = `// index.tsx
+import '@fontsource/roboto/300.css'
+import '@fontsource/roboto/400.css'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/700.css'`
+
+const codeString2 = `import Button from '@mui/material/Button'
+
+const App = () => {
+  return (
+    <Button variant="contained">Button Component</Button>
+  )
+}`
 
 const Mui = () => {
   return (
     <div className="limit-width">
       <div className="page-title">Mui</div>
+      <div className="page-subtitle">React UI tools - Material UI</div>
 
       <p>설치</p>
-      <div className="code">npm install @mui/material @emotion/react @emotion/styled</div>
+      <CodeView language="bash" code="npm install @mui/material @emotion/react @emotion/styled" />
+      <CodeView language="bash" code="npm install @fontsource/roboto" />
 
-      <div className="code">npm install @fontsource/roboto</div>
+      <CodeView code={codeString1} />
 
-      <p>App.tsx에 import</p>
-      <div className="code">
-        <pre>
-          {`import '@fontsource/roboto/300.css'
-import '@fontsource/roboto/400.css'
-import '@fontsource/roboto/500.css'
-import '@fontsource/roboto/700.css'`}
-        </pre>
-      </div>
-
-      <p>사용</p>
-      <div className="code">
-        <pre>
-          {`import Button from '@mui/material/Button'
-...
-<Button variant="contained">Hello World</Button>`}
-        </pre>
-      </div>
+      <p>사용예시</p>
+      <CodeView code={codeString2} />
 
       <div className="my-8">
-        <Button variant="contained">Test Button</Button>
+        <Button variant="contained">Button Component</Button>
       </div>
       <div className="my-4">
         <TextField label="TextField" />
