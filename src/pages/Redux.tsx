@@ -29,12 +29,13 @@ opened: ${snackbar.opened}`
       <div className="page-subtitle">전역 상태관리</div>
 
       <div>Redux를 이용한 앱 전역 Snackbar</div>
-      <div className="mt-2 mb-8 space-x-2">
+      <div className="mt-2 mb-8">
         {snackBarMsgs.map((msg, index) => (
           <Button
             key={index}
             variant="contained"
             color={msg.type as AlertColor}
+            sx={{ marginRight: '8px', marginBottom: '8px' }}
             onClick={() =>
               dispatch(openSnackbar({ message: msg.message, type: msg.type as AlertColor }))
             }

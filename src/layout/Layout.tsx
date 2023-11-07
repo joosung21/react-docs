@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -100,14 +100,10 @@ export default function ResponsiveDrawer() {
   )
 
   const location = useLocation()
-  const mainDivRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (mainDivRef.current) {
-      console.log(mainDivRef)
-
-      mainDivRef.current.scrollTop = 0
-    }
+    window.scrollTo(0, 0)
+    setMobileOpen(false)
   }, [location]) // location이 변경될 때마다 scrollTop을 0으로 초기화
 
   return (
@@ -121,6 +117,7 @@ export default function ResponsiveDrawer() {
           backgroundColor: '#fff',
           boxShadow: 'none',
           borderBottom: '1px solid #e0e0e0',
+          display: { sm: 'none' },
         }}
       >
         <Toolbar>
@@ -175,12 +172,10 @@ export default function ResponsiveDrawer() {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
         className="main"
-        ref={mainDivRef}
       >
-        <Toolbar />
+        <Toolbar sx={{ display: { sm: 'none' } }} />
 
         <Outlet />
-        {/* ref={mainDivRef}  */}
       </Box>
     </Box>
   )

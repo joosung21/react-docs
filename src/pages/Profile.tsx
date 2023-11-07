@@ -33,12 +33,12 @@ const Profile = () => {
       <div style={overlay}>
         <div className="text-small opacity-50">이 웹앱은 React v18.2로 제작되었습니다.</div>
 
-        <div className="poppins opacity-85 text-6xl md:text-7xl mt-4">
+        <div className="poppins opacity-85 text-5xl md:text-7xl mt-4">
           Front-end Developer
           <br /> & Project Leader
         </div>
 
-        <div className="poppins opacity-80 text-3xl mt-2">from New York, NY</div>
+        <div className="poppins opacity-80 text-2xl md:text-3xl mt-2">from New York, NY</div>
 
         <div className="flex mt-8 items-center space-x-2 opacity-80">
           <img src={vue} alt="vue" width={46} />
@@ -46,7 +46,20 @@ const Profile = () => {
           <img src={typescript} alt="typescript" width={42} />
         </div>
 
-        <div className="poppins mt-auto text-sm opacity-70" style={{ lineHeight: '1.7rem' }}>
+        <a
+          href="https://helix-vest-616.notion.site/6de0026076cf42aeb2266c9e88d1ab33?pvs=4"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-8 text-lg"
+          onClick={onClickHandler}
+        >
+          사이트 입장하기
+        </a>
+
+        <div
+          className="poppins mt-auto text-xs sm:text-sm opacity-70"
+          style={{ lineHeight: '1.7rem' }}
+        >
           <p>VueJs / React / Angular</p>
           <p>SPA / CI/CD / Typescript / Javascript / TSX</p>
           <p>HTML / css / sass / Tailwindcss / Vuetify / MUI</p>
@@ -60,6 +73,7 @@ const Profile = () => {
             target="_blank"
             rel="noreferrer"
             className="text-link"
+            onClick={(e) => e.stopPropagation()}
           >
             안주성 이력서 보기
           </a>
@@ -70,6 +84,7 @@ const Profile = () => {
             target="_blank"
             rel="noreferrer"
             className="text-link"
+            onClick={(e) => e.stopPropagation()}
           >
             포트폴리오/추천사 보기
           </a>
