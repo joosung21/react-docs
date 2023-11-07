@@ -4,6 +4,8 @@ const Todo = () => {
   return (
     <div className="todoList">
       <ul style={{ listStyle: 'square' }}>
+        <li>Left Drawer</li>
+        <li>반응형</li>
         <li>D3, WebGl</li>
         <li>페이지네이션</li>
         <li>라우팅 파라미터</li>
@@ -14,7 +16,6 @@ const Todo = () => {
         <hr className="my-2" />
 
         <li>디자인패턴</li>
-        <li>DateControl</li>
         <li>주소검색</li>
         {/* 공부할 것 */}
         {/* https://goddaehee.tistory.com/311 */}

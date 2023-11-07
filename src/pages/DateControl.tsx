@@ -41,7 +41,7 @@ const DateControl = () => {
   CustomInput.displayName = 'CustomInput'
 
   return (
-    <div>
+    <div className="limit-width">
       <div className="page-title">Date Control</div>
 
       <div className="mb-8">
