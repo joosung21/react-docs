@@ -4,6 +4,29 @@ import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import CodeView from 'utils/CodeView'
+
+const codeString1 = `const reducer = (state: Dog[], action: { type: string; payload: string }) => {
+  switch (action.type) {
+    case 'ADOPT':
+      return state.map((dog: Dog) => {
+        if (dog.name === action.payload) dog.adopted = true
+        return dog
+      })
+    case 'RETURN':
+      return state.map((dog: Dog) => {
+        if (dog.name === action.payload) dog.adopted = false
+        return dog
+      })
+    default:
+      return state
+  }
+}`
+
+const codeString2 = `const [state, dispatch] = useReducer(reducer, initialState)
+
+const adoptDog = (name: string) => dispatch({ type: 'ADOPT', payload: name })
+const returnDog = (name: string) => dispatch({ type: 'RETURN', payload: name })`
 
 interface Dog {
   name: string
@@ -55,6 +78,7 @@ const UseReducer = () => {
   return (
     <div className="limit-width">
       <div className="page-title">useReducer</div>
+      <div className="page-subtitle">복잡한 컴포넌트의 상태 로직을 관리하기 위한 React Hook</div>
 
       <h3>강아지 리스트</h3>
       <div className="flex flex-wrap px-4 py-2 bg-slate-100">
@@ -84,35 +108,8 @@ const UseReducer = () => {
         ))}
       </div>
 
-      <div className="code">
-        <pre>
-          {`const reducer = (state: Dog[], action: { type: string; payload: string }) => {
-  switch (action.type) {
-    case 'ADOPT':
-      return state.map((dog: Dog) => {
-        if (dog.name === action.payload) dog.adopted = true
-        return dog
-      })
-    case 'RETURN':
-      return state.map((dog: Dog) => {
-        if (dog.name === action.payload) dog.adopted = false
-        return dog
-      })
-    default:
-      return state
-  }
-}`}
-        </pre>
-      </div>
-
-      <div className="code">
-        <pre>
-          {`const [state, dispatch] = useReducer(reducer, initialState)
-
-const adoptDog = (name: string) => dispatch({ type: 'ADOPT', payload: name })
-const returnDog = (name: string) => dispatch({ type: 'RETURN', payload: name })`}
-        </pre>
-      </div>
+      <CodeView code={codeString1} />
+      <CodeView code={codeString2} />
     </div>
   )
 }
