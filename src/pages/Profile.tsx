@@ -9,16 +9,18 @@ const bgStyle = {
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  height: '100vh',
+  minHeight: '100vh',
   margin: '-24px',
   // padding: '24px',
   color: 'white',
 }
 
-const overlay = {
+const overlay: React.CSSProperties = {
   backgroundColor: 'rgba(0,0,0,0.3)',
-  height: '100%',
+  minHeight: '100vh',
   padding: '36px',
+  display: 'flex',
+  flexDirection: 'column',
 }
 
 const Profile = () => {
@@ -29,7 +31,7 @@ const Profile = () => {
           이 웹 어플리케이션은 React 18 최신버젼으로 제작되었습니다.
         </div>
 
-        <div className="poppins opacity-85 text-7xl mt-8">
+        <div className="poppins opacity-85 text-7xl mt-4">
           Front-end Developer
           <br /> & Project Leader
         </div>
@@ -42,7 +44,7 @@ const Profile = () => {
           <img src={typescript} alt="typescript" width={42} />
         </div>
 
-        <div className="poppins mt-20 text-sm opacity-80" style={{ lineHeight: '1.7rem' }}>
+        <div className="poppins mt-auto text-sm opacity-80" style={{ lineHeight: '1.7rem' }}>
           <p>VueJs / React / Angular</p>
           <p>SPA / CI/CD / Typescript / Javascript</p>
           <p>HTML / css / sass / Tailwindcss / Vuetify / MUI</p>
@@ -60,7 +62,7 @@ const Profile = () => {
             안주성 이력서 보기
           </a>
         </div>
-        <div className="mt-2 text-sm opacity-60">
+        <div className="text-sm opacity-60">
           <a
             href="https://helix-vest-616.notion.site/Reference-Portfolio-2207c2c438444b47acbbc7642d2a2796?pvs=4"
             target="_blank"
@@ -70,6 +72,7 @@ const Profile = () => {
             포트폴리오/추천사 보기
           </a>
         </div>
+        <div className="text-sm opacity-50">joosung21@gmail.com | 010-2268-5399</div>
       </div>
     </div>
   )
