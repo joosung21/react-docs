@@ -31,7 +31,7 @@ const CodeView: React.FC<CodeViewProps> = ({ code, language = 'typescript' }) =>
 
   return (
     <div className="code-view">
-      <div className="copy-button">
+      <div className="copy-button hidden md:block">
         <IconButton aria-label="copy" onClick={copyToClipboard}>
           <CounterIconCopy />
         </IconButton>

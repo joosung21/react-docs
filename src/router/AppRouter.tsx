@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react'
-import { useLocation } from 'react-router-dom'
+import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
+
+import Layout from 'layout/Layout'
 
 // Pages
 import Profile from 'pages/Profile'
-import Left from 'layout/Left'
 import NotFound from 'pages/NotFound'
 import Todo from 'pages/Todo'
 import MUI from 'pages/Mui'
@@ -27,24 +27,17 @@ import UseRef from 'pages/UseRef'
 import UseContext from 'pages/UseContext'
 import UseReducer from 'pages/UseReducer'
 
+import Test from 'layout/Layout'
+
 const AppRouter = () => {
-  const mainDivRef = useRef<HTMLDivElement>(null)
-  const location = useLocation()
-
-  useEffect(() => {
-    if (mainDivRef.current) {
-      mainDivRef.current.scrollTop = 0
-    }
-  }, [location]) // location이 변경될 때마다 scrollTop을 0으로 초기화
-
   return (
-    <>
-      <Left />
+    <div style={{ width: '100%' }}>
+      <Routes>
+        <Route path="/" element={<Navigate to="/profile" />} />
+        <Route path="/profile" element={<Profile />} />
 
-      <div className="main" ref={mainDivRef}>
-        <Routes>
-          <Route path="/" element={<Navigate to="/profile" />} />
-          <Route path="/profile" element={<Profile />} />
+        <Route element={<Layout />}>
+          <Route path="/test" element={<Test />} />
           <Route path="/create-react-app" element={<CreateReactApp />} />
           <Route path="/lint-format" element={<LintFormat />} />
           <Route path="/react-router" element={<ReactRouter />} />
@@ -66,9 +59,9 @@ const AppRouter = () => {
           <Route path="/use-reducer" element={<UseReducer />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </>
+        </Route>
+      </Routes>
+    </div>
   )
 }
 

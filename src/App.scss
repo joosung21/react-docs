@@ -5,7 +5,6 @@
   display: flex;
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
-  // background-color: #f5f5f5;
 }
 
 .poppins {
@@ -29,12 +28,8 @@ dl {
 }
 
 .left {
-  flex-shrink: 0;
-  width: 280px;
-  height: 100vh;
   padding: 12px 0;
   user-select: none;
-  overflow-y: auto;
   .left-header {
     opacity: 0.85;
     transition: all 0.3s;
@@ -72,15 +67,6 @@ dl {
   }
 }
 
-.main {
-  padding: 24px;
-  width: 100%;
-  min-width: 800px;
-  height: 100vh;
-  overflow-x: auto;
-  overflow-y: auto;
-}
-
 .limit-width {
   max-width: 960px;
 }
@@ -101,7 +87,6 @@ dl {
 }
 
 .text-link {
-  // light blue
   color: rgb(23, 140, 233);
   text-decoration: none;
   transition: all 0.3s;

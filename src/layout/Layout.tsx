@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import CssBaseline from '@mui/material/CssBaseline'
+import Drawer from '@mui/material/Drawer'
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from '@mui/icons-material/Menu'
+import Toolbar from '@mui/material/Toolbar'
+import { Outlet } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
+
 import { Link, useMatch, useResolvedPath } from 'react-router-dom'
 import { NavLink, NavProps } from './Left.d'
 import logo from 'assets/logo.svg'
 import jay from 'assets/jay.jpg'
 import Avatar from '@mui/material/Avatar'
+
+const drawerWidth = 280
 
 const navLinks = [
   { title: 'Create React App', path: '/create-react-app', parent: 'Settings' },
@@ -28,7 +40,13 @@ const navLinks = [
   { title: 'Todo', path: '/todo', parent: 'Ect' },
 ] as NavLink[]
 
-const Left = () => {
+export default function ResponsiveDrawer() {
+  const [mobileOpen, setMobileOpen] = React.useState(false)
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen)
+  }
+
   const groups = navLinks.reduce((acc: string[], cur) => {
     if (!acc.includes(cur.parent)) {
       acc.push(cur.parent)
@@ -63,7 +81,7 @@ const Left = () => {
     </>
   )
 
-  return (
+  const drawer = (
     <div className="left bg-blue-950 text-sky-300">
       <Link to={'/'} className="left-header">
         <img src={logo} alt="logo" className="rotate-logo w-32 mx-auto" />
@@ -77,13 +95,93 @@ const Left = () => {
         {groups.map((group) => (
           <NavGroup groupTitle={group} key={group} />
         ))}
-        {/* <NavGroup groupTitle="Settings" />
-        <NavGroup groupTitle="UI Framworks" />
-        <NavGroup groupTitle="Hooks" />
-        <NavGroup groupTitle="Ect" /> */}
       </div>
     </div>
   )
-}
 
-export default Left
+  const location = useLocation()
+  const mainDivRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (mainDivRef.current) {
+      console.log(mainDivRef)
+
+      mainDivRef.current.scrollTop = 0
+    }
+  }, [location]) // location이 변경될 때마다 scrollTop을 0으로 초기화
+
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        sx={{
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          ml: { sm: `${drawerWidth}px` },
+          backgroundColor: '#fff',
+          boxShadow: 'none',
+          borderBottom: '1px solid #e0e0e0',
+        }}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: 'none' }, color: '#666' }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: 'block', sm: 'none' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+        >
+          {drawer}
+        </Drawer>
+        <Drawer
+          variant="permanent"
+          sx={{
+            display: { xs: 'none', sm: 'block' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          }}
+          open
+        >
+          {drawer}
+        </Drawer>
+      </Box>
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          p: 3,
+          overflowY: 'hidden',
+          width: { sm: `calc(100% - ${drawerWidth}px)` },
+        }}
+        className="main"
+        ref={mainDivRef}
+      >
+        <Toolbar />
+
+        <Outlet />
+        {/* ref={mainDivRef}  */}
+      </Box>
+    </Box>
+  )
+}
