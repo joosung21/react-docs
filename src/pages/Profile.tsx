@@ -24,6 +24,9 @@ const overlay: React.CSSProperties = {
 
 // 클릭하면 create-react-app 페이지로 라우터 이동
 const onClickHandler = () => {
+  // 드래그 일 경우 무시
+  if (window.getSelection()?.toString()) return
+
   window.location.href = '/create-react-app'
 }
 
@@ -89,7 +92,27 @@ const Profile = () => {
             포트폴리오/추천사 보기
           </a>
         </div>
-        <div className="text-sm opacity-50">joosung21@gmail.com | 010-2268-5399</div>
+        <div className="text-sm opacity-60">
+          <a
+            href="mailto:joosung21@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-link"
+            onClick={(e) => e.stopPropagation()}
+          >
+            joosung21@gmail.com
+          </a>
+          <span className="mx-2 text-link opacity-50">|</span>
+          <a
+            href="tel:010-2268-5399"
+            target="_blank"
+            rel="noreferrer"
+            className="text-link"
+            onClick={(e) => e.stopPropagation()}
+          >
+            010-2268-5399
+          </a>
+        </div>
       </div>
     </div>
   )

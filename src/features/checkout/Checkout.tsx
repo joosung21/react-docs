@@ -11,7 +11,7 @@ import AddressForm from './AddressForm'
 import PaymentForm from './PaymentForm'
 import Review from './Review'
 
-const steps = ['배송지 주소', '결제수단', '주문재확인']
+const steps = ['배송지', '결제수단', '주문확인']
 
 function getStepContent(step: number) {
   switch (step) {
@@ -38,7 +38,7 @@ export default function Checkout() {
   }
 
   return (
-    <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+    <Container component="main" maxWidth="sm" sx={{ mb: 4, p: 0 }}>
       <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
         <Typography component="h1" variant="h4" align="center">
           결제하기

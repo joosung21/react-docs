@@ -24,7 +24,7 @@ type: ${snackbar.type}
 opened: ${snackbar.opened}`
 
   return (
-    <div>
+    <div className="limit-width">
       <div className="page-title">Redux</div>
       <div className="page-subtitle">전역 상태관리</div>
 

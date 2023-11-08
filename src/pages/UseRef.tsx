@@ -17,6 +17,15 @@ const onToggleBtnClick = () => {
   TextFd.current?.style.setProperty('width', width === '100%' ? '200px' : '100%')
 }`
 
+const codeString2 = `<TextField
+  id="outlined-basic"
+  ref={TextFd}
+  inputRef={inputEl}
+  label=""
+  size="small"
+  sx={{ width: '200px' }}
+/>`
+
 const UseRef = () => {
   const inputEl = useRef<HTMLInputElement>(null)
   const TextFd = useRef<HTMLInputElement>(null)
@@ -59,18 +68,7 @@ const UseRef = () => {
       </div>
 
       <CodeView code={codeString1} />
-      <div className="code">
-        <pre>
-          {`<TextField
-  id="outlined-basic"
-  ref={TextFd}
-  inputRef={inputEl}
-  label=""
-  size="small"
-  sx={{ width: '200px' }}
-/>`}
-        </pre>
-      </div>
+      <CodeView code={codeString2} />
     </div>
   )
 }
