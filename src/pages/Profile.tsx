@@ -67,7 +67,7 @@ const Profile = () => {
           <p>SPA / CI/CD / Typescript / Javascript / TSX</p>
           <p>HTML / css / sass / Tailwindcss / Vuetify / MUI</p>
           <p>Postgresql / MySQL / TypeORM / Sequelize</p>
-          <p>Photoshop / Pigma / Illustrator / Jquery</p>
+          <p>Photoshop / Figma / Illustrator / Jquery</p>
         </div>
 
         <div className="mt-8 text-sm opacity-60">
